@@ -118,7 +118,7 @@ def transform_coin_market_data(input_coin_details):
     try:
         output_coin_details = {
                 "id": input_coin_details["id"],
-                "date": input_coin_details["last_updated"],
+                "date": utils.iso8601_to_timestamp(input_coin_details["last_updated"]),
                 "prices": input_coin_details["current_price"],
                 "market_caps": input_coin_details["market_cap"],
                 "total_volumes": input_coin_details["total_volume"],

@@ -26,6 +26,12 @@ def epoch_to_timestamp(epoch_string):
         formatted_timestamp = datetime_now().format("YYYY-MM-DD HH:mm:ss")
     return formatted_timestamp
 
+def iso8601_to_timestamp(input_iso8601_timestamp):
+    """
+    takes an iso8601 timestamp to timestamp
+    """
+    return arrow.get(input_iso8601_timestamp).format("YYYY-MM-DD HH:mm:ss")
+
 def dict_to_jsonl(dict_input):
     """
     takes a dict object and turns it into a jsonl doc
